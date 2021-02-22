@@ -22,7 +22,7 @@ li{
     width: 800px;
     margin: 20px;
     background-color: rgb(0, 0, 0);
-    opacity: .4;
+    opacity: .6;
     list-style-type: none;
     padding: 50px;
     border: solid 2px white;
@@ -30,19 +30,53 @@ li{
 }
 i{font-weight: bold;font-size: 25px;}
 
+input[type=text] {
+  font-size: 40px;
+  width: 900px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  margin-left: 60px;
+  color: white;
+  background-color: black;
+  opacity: 0.6;
+}
+input[type=submit] {
+  width: 900px;
+  padding: 12px 20px;
+  margin-left: 60px;
+  box-sizing: border-box;
+  font-size: 40px;
+  color: white;
+  background-color: black;
+  opacity: 0.6;
+}
+
 </style>
 <title>Timeworld</title>
 </head>
 <body>
-    <h1>All time zones and current time</h1>
+    <form action="." method="GET">
+        
+        <input type="text" name="text"/><br>
+        <input type="submit" value="Search"/>
+    </form>
 <ul>
-    {% for zone in time_zones %}
+{% for zone in time_zones %}
     {% with zone as place %}
-    {% timezone place %}
-    <li>{{ place }}  <i>{{ now }}</i></li>
-    {% endtimezone %}
+        {% if value %}
+            {% if  value.lower in place.lower %}
+                {% timezone place %}
+                    <li>{{ place }}  <i>{{ now }}</i></li>
+                {% endtimezone %}
+            {% endif %}
+        {% else %}
+            {% timezone place %}
+                <li>{{ place }}  <i>{{ now }}</i></li>
+            {% endtimezone %}
+        {% endif %}
     {% endwith %}
-    {% endfor %}
+{% endfor %}
 </ul>
 <br><br><br>
 
