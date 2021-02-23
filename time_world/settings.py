@@ -14,7 +14,7 @@ SECRET_KEY = '!5o22$lntjesdz@$(mjcymq3zz#jjx1_@f-lqpw#aplmr-#v*k'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['enigmatic-sea-48496.herokuapp.com','azurewebsites.net']
+ALLOWED_HOSTS = ['enigmatic-sea-48496.herokuapp.com','azurewebsites.net','time-world.azurewebsites.net']
 
 
 # Application definition
