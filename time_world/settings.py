@@ -12,9 +12,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '!5o22$lntjesdz@$(mjcymq3zz#jjx1_@f-lqpw#aplmr-#v*k'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["0.0.0.0"]
+ALLOWED_HOSTS = ['enigmatic-sea-48496.herokuapp.com']
 
 
 # Application definition
